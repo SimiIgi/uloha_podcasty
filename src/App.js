@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Podcast from "./components/Podcast"
 
-function App() {
+
+const App = () => {
+  const episodes = [
+  { num: 126, title: 'Robot, který snědl koblihu', guest: 'Radovan Siwek' },
+  { num: 127, title: 'Hledání plyšového Yettiho', guest: 'Vojtěch Ryba' },
+  { num: 128, title: 'Moderní hrachová polévka', guest: 'Kamila Štancová' },
+  { num: 129, title: 'Poloautomatické zrcadlo', guest: 'Janka Janovská' },
+  { num: 130, title: 'Máčené hlavy parlamentu', guest: 'Jonáš Daněk' },
+  { num: 131, title: 'Služby na hraně přívěsu', guest: 'Tereza Křivánková' },
+  { num: 132, title: 'Klasifikace sněžných klokanů', guest: 'Josef Stix' },
+  { num: 133, title: 'Rybolov v Oceánu bouří', guest: 'Ludmila Gajová' },
+];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {episodes.map((episode, index) => (
+        <Podcast key={index} data={episode} />
+      ))}
     </div>
   );
-}
+};
 
-export default App;
+
+export default App
